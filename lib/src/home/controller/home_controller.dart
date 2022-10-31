@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeController extends ChangeNotifier {
-  var counter = 0;
+class HomeController {
+  var counter$ = ValueNotifier(0);
+  var loading$ = ValueNotifier(true);
 
-  void increment() {
-    counter++;
-    notifyListeners();
-  }
+  int get counter => counter$.value;
+
+  void increment() => counter$.value++;
 }
